@@ -18,7 +18,7 @@ function couldRun(member_id): boolean {
     }
 
     let lastRunTime = lastRuns.get(member_id);
-    return Date.now() - 84600 > lastRunTime;
+    return Date.now() - 43200 > lastRunTime;
 }
 
 discordClient.on("message", async msg => {
