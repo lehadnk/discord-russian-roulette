@@ -7,7 +7,7 @@ export class Barrel {
         }
 
         let lastRunTime = this.shooters.get(member_id);
-        return Date.now() - 43200 > lastRunTime;
+        return Date.now() - 43200000 > lastRunTime;
     }
 
     public shoot(member_id: string) {
