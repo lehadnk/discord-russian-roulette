@@ -12,12 +12,12 @@ let discordClient = new Client();
 const muteTime = parseInt(process.env.MUTE_TIME) * 1000;
 
 discordClient.on("message", async msg => {
+    if (msg.content != '!рулетка') return;
+
     if (msg.member.hasPermission("ADMINISTRATOR")) {
         msg.channel.send("Сорян, бро, админы в игре не учавствуют.");
         return;
     }
-
-    if (msg.content != '!рулетка') return;
 
     let rand = Math.random() * 6;
     if (rand <= 1) {
