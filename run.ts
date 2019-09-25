@@ -24,10 +24,10 @@ function couldRun(member_id): boolean {
 discordClient.on("message", async msg => {
     if (msg.content != '!рулетка') return;
 
-    // if (msg.member.hasPermission("ADMINISTRATOR")) {
-    //     msg.channel.send("Сорян, бро, админы в игре не учавствуют.");
-    //     return;
-    // }
+    if (msg.member.hasPermission("ADMINISTRATOR")) {
+        msg.channel.send("Сорян, бро, админы в игре не учавствуют.");
+        return;
+    }
 
     if (!couldRun(msg.member.id)) {
         msg.channel.send("Не много ль ты рискуешь своей судьбой, ковбой? Будь осторожен, приходи в другое время.")
