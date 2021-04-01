@@ -9,10 +9,10 @@ export class Bot {
         this.client.on("message", async msg => {
             if (msg.content != '!рулетка') return;
 
-            if (msg.member.hasPermission("ADMINISTRATOR")) {
-                responseTo(msg, "Сорян, бро, админы в игре не учавствуют.", 5);
-                return;
-            }
+            // if (msg.member.hasPermission("ADMINISTRATOR")) {
+            //     responseTo(msg, "Сорян, бро, админы в игре не учавствуют.", 5);
+            //     return;
+            // }
 
             if (!barrel.canShoot(msg.author.id)) {
                 responseTo(msg, "Не много ль ты рискуешь своей судьбой, ковбой? Будь осторожен, приходи в другое время.", 7);
